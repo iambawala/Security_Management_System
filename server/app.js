@@ -1,13 +1,13 @@
-const express = require("express")
+import express from "express"
 const app = express()
 const port = 3000
 
 app.use(express.json())
 
-const dotenv = require("dotenv")
+import  dotenv from "dotenv"
 dotenv.config()
 
-const connectDB = require("./db/config.js")
+import  connectDB from "./db/config.js"
 connectDB() // Connect to MongoDB
 
 app.get("/health", (req,res)=> {

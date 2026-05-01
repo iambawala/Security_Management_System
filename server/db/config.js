@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');   
+import mongoose from "mongoose";   
 const connectDB = async () => {
 
 try {
@@ -9,4 +9,4 @@ try {
     process.exit(1); // Exit the process with failure
 }
 }
-module.exports = connectDB;
+export default connectDB;
