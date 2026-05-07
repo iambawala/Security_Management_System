@@ -1,6 +1,6 @@
 import express from "express"
 const app = express()
-const port = 3000
+// const port = 3000
 
 app.use(express.json())
 
@@ -19,6 +19,6 @@ app.get("/health/about", (req,res)=> {
     res.send("Health About, Server Running")
 }) 
 
-app.listen(port, ()=>{
-    console.log(`server running on ${port}`)
-} )  
+// app.listen(port, ()=>{
+//     console.log(`server running on ${port}`)
+// } )  
