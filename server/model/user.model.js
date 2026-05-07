@@ -1,17 +1,20 @@
-import mongoose from "mongoose";
-const userSchema = new mongoose.Schema({
+import mongoose from "mongoose"; // Import the mongoose library to define the schema and model for the User collection
+const userSchema = new mongoose.Schema({ // Define the schema for the User model
     name: {
         type: String,
-        required: true
+        trim : true,
+        required: [true, "Name is required"]
     },
     email: {
         type: String,
-        required: true,
+        trim : true,
+        required: [true, "Email is required"],
         unique: true
     },
-    password: {
+    password: { 
         type: String,
-        required: true
+        trim : true,
+        required: [true, "Password is required"]
     },
     role: {
         type: String,
@@ -25,5 +28,12 @@ const userSchema = new mongoose.Schema({
     isActive: {
         type: Boolean,
         default: true
+    },
+    flat: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Flat' // Reference to the Flat model
     }
 });
+
+const User = mongoose.model('User', userSchema); // Create the User model
+export default User; // Export the User model for use in other parts of the application 

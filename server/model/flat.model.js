@@ -15,3 +15,6 @@ const flatSchema = new mongoose.Schema({
         required: true
     }
 });
+
+const Flat = mongoose.model('Flat', flatSchema); // Create the Flat model
+export default Flat; // Export the Flat model for use in other parts of the application
